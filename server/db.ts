@@ -98,8 +98,9 @@ export function runTransaction<T>(callback: () => T): T {
     } catch (rollbackError) {
       console.error('Rollback failed:', rollbackError);
     }
-    throw error;
+        throw error;
   }
+}
 
 async function initSchema(db: Database) {
   db.run('PRAGMA foreign_keys = ON;');
