@@ -92,11 +92,14 @@ export function runTransaction<T>(callback: () => T): T {
     dbInstance.run('COMMIT');
     saveDb();
     return result;
-  } catch (error) {
-    dbInstance.run('ROLLBACK');
+    } catch (error) {
+    try {
+      dbInstance.run('ROLLBACK');
+    } catch (rollbackError) {
+      console.error('Rollback failed:', rollbackError);
+    }
     throw error;
   }
-}
 
 async function initSchema(db: Database) {
   db.run('PRAGMA foreign_keys = ON;');
