@@ -1,0 +1,6 @@
+{
+  "name": "LUXEWEAR | Modern Luxury Fashion & Atelier",
+  "description": "Premium everyday clothing crafted with clean lines, considered fabrics, and an architectural point of view. Discover new arrivals, tailored essentials, and direct WhatsApp shopping.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
